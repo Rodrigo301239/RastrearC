@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👀 ONDE ESTÁ CARLOS? - Monitoramento em Tempo Real 👀</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+  <div class="background-text"></div>
+
+  <!-- ================= LOGIN ================= -->
+  <div id="loginScreen" class="screen active">
+    <div class="main-container">
+
+      <div class="header">
+        <div class="logo">
+          <span class="logo-icon">🎯</span>
+          <h1>ONDE ESTÁ <span class="carlos-name">CARLOS</span>?</h1>
+          <span class="logo-icon">👀</span>
+        </div>
+        <p class="subtitle">Entre no esquadrão que monitora o Carlos 24/7</p>
+      </div>
+
+      <div class="login-box">
+
+        <div class="login-header">
+          <span class="login-icon">🔐</span>
+          <h3>ACESSO RESTRITO</h3>
+          <span class="login-icon">👁️</span>
+        </div>
+
+        <form id="loginForm" method="POST" action="/login">
+          
+          <div class="input-group">
+            <label>📧 E-MAIL</label>
+            <input type="email" name="email" placeholder="seu@email.com" required>
+          </div>
+
+          <div class="input-group">
+            <label>🔒 SENHA</label>
+            <input type="password" name="senha" placeholder="••••••••" required>
+          </div>
+
+          <button type="submit" class="login-btn">
+            <span>🚀 ENTRAR NO MONITORAMENTO</span>
+            <span>👀</span>
+          </button>
+
+        </form>
+
+        <!-- 🔥 BOTÃO SEM JS (ÂNCORA) -->
+        <a href="#registerScreen" class="toggle-link" style="text-decoration:none;">
+          🃏 Não tem acesso? Cadastre-se para caçar o Carlos 🃏
+        </a>
+
+        <div class="provocation">★ Só os fortes entram aqui. Os fracos desistem ★</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CADASTRO ================= -->
+  <div id="registerScreen" class="screen">
+    <div class="main-container">
+
+      <div class="header">
+        <div class="logo">
+          <span class="logo-icon">🎯</span>
+          <h1>ONDE ESTÁ <span class="carlos-name">CARLOS</span>?</h1>
+          <span class="logo-icon">👀</span>
+        </div>
+        <p class="subtitle">Junte-se ao time que não deixa o Carlos em paz</p>
+      </div>
+
+      <div class="login-box">
+
+        <div class="login-header">
+          <span class="login-icon">🤡</span>
+          <h3>CADASTRO ANTI-CARLOS</h3>
+          <span class="login-icon">😈</span>
+        </div>
+
+        <form id="registerForm" method="POST" action="/cadastro">
+
+          <div class="input-group">
+            <label>👤 NOME COMPLETO</label>
+            <input type="text" name="nome" placeholder="Seu nome aqui" required>
+          </div>
+
+          <div class="input-group">
+            <label>📧 E-MAIL</label>
+            <input type="email" name="email" placeholder="seu@email.com" required>
+          </div>
+
+          <div class="input-group">
+            <label>🔒 SENHA</label>
+            <input type="password" name="senha" placeholder="Crie uma senha" required>
+          </div>
+
+          <div class="input-group">
+            <label>✅ CONFIRMAR SENHA</label>
+            <input type="password" name="confirmar_senha" placeholder="Digite novamente" required>
+          </div>
+
+          <button type="submit" class="login-btn">
+            <span>😤 CADASTRAR E CAÇAR CARLOS</span>
+            <span>🎯</span>
+          </button>
+
+        </form>
+
+        <!-- 🔥 VOLTAR PARA LOGIN (SEM JS) -->
+        <a href="#loginScreen" class="toggle-link" style="text-decoration:none;">
+          🎭 Já tem cadastro? Voltar para login
+        </a>
+
+        <div class="provocation">⚡ Cadastre-se e comece a expor o Carlos agora mesmo! ⚡</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HOME ================= -->
+  <div id="mainScreen" class="screen">
+    <div class="main-container">
+
+      <div class="header">
+        <div class="logo">
+          <span class="logo-icon">🎯</span>
+          <h1>ONDE ESTÁ <span class="carlos-name">CARLOS</span>?</h1>
+          <span class="logo-icon">👀</span>
+        </div>
+
+        <div class="user-info">
+          <span class="user-icon">👤</span>
+          <span id="currentUserName" class="user-name">Carregando...</span>
+          <button onclick="logout()" class="logout-btn">🚪 SAIR</button>
+        </div>
+
+        <p class="subtitle">Monitoramento em tempo real • 24/7 • Nunca vai escapar</p>
+      </div>
+
+      <div class="post-area">
+
+        <div class="post-header">
+          <span class="post-icon">📢</span>
+          <h3>O que o <strong>CARLOS</strong> está fazendo <span class="live-text">AGORA</span>?</h3>
+        </div>
+
+        <textarea id="postContent" maxlength="200"></textarea>
+
+        <div class="post-controls">
+          <span class="char-counter">0/200</span>
+          <button id="postBtn" class="post-btn">
+            <span>🚨 DENUNCIAR CARLOS</span>
+            <span>🔥</span>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="feed-container">
+
+        <div class="feed-header">
+          <h3>📡 ÚLTIMAS ATUALIZAÇÕES SOBRE O CARLOS</h3>
+          <div class="live-badge">
+            <span class="live-dot"></span>
+            AO VIVO
+          </div>
+        </div>
+
+        <div id="feed" class="feed">
+          <div class="welcome-message">
+            👋 Bem-vindo ao esquadrão anti-Carlos!
+          </div>
+        </div>
+
+      </div>
+
+      <div class="counter-box">
+        <span class="counter-label">VEZES QUE CARLOS FOI EXPOSTO:</span>
+        <span id="postCounter" class="counter-number">0</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JS só se quiser logout/post depois -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
