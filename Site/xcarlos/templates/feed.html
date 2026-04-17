@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed - Onde está Carlos?</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Sidebar Esquerda -->
+    <aside class="sidebar-left">
+      <div class="logo-sidebar">
+        <span class="logo-icon">🎯</span>
+        <h2>Onde está<br><span class="highlight">Carlos</span>?</h2>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active">
+          <span class="nav-icon">🏠</span>
+          <span>Início</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">🔍</span>
+          <span>Explorar</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">🔔</span>
+          <span>Notificações</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">💬</span>
+          <span>Mensagens</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">📊</span>
+          <span>Estatísticas</span>
+        </a>
+        <a href="index.html" class="nav-item">
+          <span class="nav-icon">🚪</span>
+          <span>Sair</span>
+        </a>
+      </nav>
+
+      <div class="user-card">
+        <div class="user-avatar">👤</div>
+        <div class="user-info-sidebar">
+          <strong>Caçador Anônimo</strong>
+          <span>@cacador</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Feed Central -->
+    <main class="feed-main">
+      <div class="feed-header">
+        <h2>Início</h2>
+        <div class="feed-options">
+          <span class="option active">Para você</span>
+          <span class="option">Seguindo</span>
+        </div>
+      </div>
+
+      <!-- Post Creator (estático) -->
+      <div class="post-creator">
+        <div class="post-creator-avatar">👤</div>
+        <div class="post-creator-input">
+          <div class="fake-input">O que o Carlos está fazendo agora?</div>
+          <div class="creator-actions">
+            <div class="media-icons">
+              <span class="media-icon">🖼️</span>
+              <span class="media-icon">🎬</span>
+              <span class="media-icon">😊</span>
+            </div>
+            <button class="postar-creator-btn" disabled style="opacity:0.5">Publicar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feed de Posts -->
+      <div class="feed-posts">
+        
+        <!-- Post 1 -->
+        <div class="post-card">
+          <div class="post-header">
+            <div class="post-avatar">👤</div>
+            <div class="post-content">
+              <div class="post-author">
+                <strong>Maria Silva</strong>
+                <span class="username">@maria_cacadora</span>
+                <span class="time">· 5 min</span>
+              </div>
+              <div class="post-text">
+                <p>Acabei de ver o Carlos no supermercado! Ele estava comprando escondido 🤣</p>
+              </div>
+              <div class="post-image">
+                <img src="https://picsum.photos/500/300?random=1" alt="Post image">
+              </div>
+              <div class="post-actions">
+                <button class="action-btn">❤️ 234</button>
+                <button class="action-btn">💬 45</button>
+                <button class="action-btn">🔄 12</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="post-card">
+          <div class="post-header">
+            <div class="post-avatar">👤</div>
+            <div class="post-content">
+              <div class="post-author">
+                <strong>João Santos</strong>
+                <span class="username">@joao_cacador</span>
+                <span class="time">· 15 min</span>
+              </div>
+              <div class="post-text">
+                <p>Carlos tentou fugir pela porta dos fundos mas esbarrou na parede! Alguém viu? 😂😂</p>
+              </div>
+              <div class="post-actions">
+                <button class="action-btn">❤️ 567</button>
+                <button class="action-btn">💬 89</button>
+                <button class="action-btn">🔄 34</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="post-card">
+          <div class="post-header">
+            <div class="post-avatar">👤</div>
+            <div class="post-content">
+              <div class="post-author">
+                <strong>Ana Costa</strong>
+                <span class="username">@ana_monitora</span>
+                <span class="time">· 32 min</span>
+              </div>
+              <div class="post-text">
+                <p>⚠️ ATENÇÃO ⚠️ Carlos foi visto na praça de alimentação! Cuidado quem for lá! 🚨</p>
+              </div>
+              <div class="post-image">
+                <img src="https://picsum.photos/500/300?random=2" alt="Post image">
+              </div>
+              <div class="post-actions">
+                <button class="action-btn">❤️ 1.2K</button>
+                <button class="action-btn">💬 234</button>
+                <button class="action-btn">🔄 67</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 4 - Apenas texto -->
+        <div class="post-card">
+          <div class="post-header">
+            <div class="post-avatar">👤</div>
+            <div class="post-content">
+              <div class="post-author">
+                <strong>Pedro Oliveira</strong>
+                <span class="username">@pedro_cacador</span>
+                <span class="time">· 1 hora</span>
+              </div>
+              <div class="post-text">
+                <p>Alguém sabe onde o Carlos está agora? Perdi ele de vista no estacionamento 😅</p>
+              </div>
+              <div class="post-actions">
+                <button class="action-btn">❤️ 89</button>
+                <button class="action-btn">💬 56</button>
+                <button class="action-btn">🔄 23</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 5 -->
+        <div class="post-card">
+          <div class="post-header">
+            <div class="post-avatar">👤</div>
+            <div class="post-content">
+              <div class="post-author">
+                <strong>Carla Mendes</strong>
+                <span class="username">@carla_cacadora</span>
+                <span class="time">· 2 horas</span>
+              </div>
+              <div class="post-text">
+                <p>Carlos está no cinema! Assistiram ele comprando pipoca! 🍿🎬</p>
+              </div>
+              <div class="post-image">
+                <img src="https://picsum.photos/500/300?random=3" alt="Post image">
+              </div>
+              <div class="post-actions">
+                <button class="action-btn">❤️ 456</button>
+                <button class="action-btn">💬 78</button>
+                <button class="action-btn">🔄 45</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 6 -->
+        <div class="post-card">
+          <div class="post-header">
+            <div class="post-avatar">👤</div>
+            <div class="post-content">
+              <div class="post-author">
+                <strong>Ricardo Lima</strong>
+                <span class="username">@ricardo_cacador</span>
+                <span class="time">· 3 horas</span>
+              </div>
+              <div class="post-text">
+                <p>🚨 ÚLTIMA HORA 🚨 Carlos foi visto entrando no shopping! Preparem os olhos! 👀</p>
+              </div>
+              <div class="post-actions">
+                <button class="action-btn">❤️ 2.3K</button>
+                <button class="action-btn">💬 567</button>
+                <button class="action-btn">🔄 234</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Sidebar Direita -->
+    <aside class="sidebar-right">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Buscar sobre o Carlos...">
+      </div>
+
+      <div class="trending-box">
+        <h3>🔥 Tendências</h3>
+        <div class="trending-item">
+          <span class="trending-category">Assunto do momento</span>
+          <strong>#CadêOCarlos</strong>
+          <span class="trending-posts">2.345 posts</span>
+        </div>
+        <div class="trending-item">
+          <span class="trending-category">Em alta</span>
+          <strong>#CarlosFugiu</strong>
+          <span class="trending-posts">1.892 posts</span>
+        </div>
+        <div class="trending-item">
+          <span class="trending-category">Tendência</span>
+          <strong>#MonitorandoCarlos</strong>
+          <span class="trending-posts">987 posts</span>
+        </div>
+        <div class="trending-item">
+          <span class="trending-category">Em alta</span>
+          <strong>#OndeOCarlos</strong>
+          <span class="trending-posts">654 posts</span>
+        </div>
+        <div class="trending-item">
+          <span class="trending-category">Tendência</span>
+          <strong>#CarlosNoShopping</strong>
+          <span class="trending-posts">432 posts</span>
+        </div>
+      </div>
+
+      <div class="suggestions-box">
+        <h3>✨ Quem seguir</h3>
+        <div class="suggestion-item">
+          <div class="suggestion-avatar">👤</div>
+          <div class="suggestion-info">
+            <strong>Caçador Master</strong>
+            <span>@cacador_master</span>
+          </div>
+          <button class="follow-btn">Seguir</button>
+        </div>
+        <div class="suggestion-item">
+          <div class="suggestion-avatar">👤</div>
+          <div class="suggestion-info">
+            <strong>Monitora Carlos</strong>
+            <span>@monitora_carlos</span>
+          </div>
+          <button class="follow-btn">Seguir</button>
+        </div>
+        <div class="suggestion-item">
+          <div class="suggestion-avatar">👤</div>
+          <div class="suggestion-info">
+            <strong>Caçadora Top</strong>
+            <span>@cacadora_top</span>
+          </div>
+          <button class="follow-btn">Seguir</button>
+        </div>
+      </div>
+
+      <div class="stats-box">
+        <h3>📊 Estatísticas</h3>
+        <div class="stat-item">
+          <span>Total de posts:</span>
+          <strong>1.247</strong>
+        </div>
+        <div class="stat-item">
+          <span>Caçadores ativos:</span>
+          <strong>342</strong>
+        </div>
+        <div class="stat-item">
+          <span>Reações hoje:</span>
+          <strong>5.678</strong>
+        </div>
+        <div class="stat-item">
+          <span>Carlos avistado:</span>
+          <strong>23x hoje</strong>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+</body>
+</html>
