@@ -41,7 +41,7 @@ def login(informacoes):
     conexao = conectar_banco()
     cursor = conexao.cursor()   
 
-    cursor.execute("SELECT COUNT(email) FROM usuarios WHERE email=? AND senha=?", (informacoes['email'], informacoes['senha']))
+    cursor.execute("SELECT COUNT(email) FROM usuarios WHERE email=? AND senha=?", (informacoes['email'], informacoes['password']))
     conexao.commit()
     
     quantidade_de_emails = cursor.fetchone()

@@ -8,14 +8,17 @@ import database
 def index():
     return render_template('index.html')
 
-@app.route('/cadastro',methods = ["GET","POST"])
+@app.route('/cadastrar', methods=["GET", "POST"])
 def cadastrar():
-    form = request.form
-    if database.cadastro(form) == True:
-        return render_template('home.html')
-    
-    else:
-        return ("erro1")
+    if request.method == "POST":
+        form = request.form
+
+        if database.cadastro(form):
+            return redirect(url_for('home'))
+        else:
+            return "erro1"
+
+    return render_template('login.html')
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -28,11 +31,14 @@ def login():
         else:
             return "erro2"
 
-    # 👇 quando acessar pelo link (GET)
-    return render_template('login.html')
+    if request.method == "GET":
+        return render_template('login.html')
 
 @app.route('/home')
 def home():
+    if 'email' not in session:
+        return redirect(url_for('login'))
+    
     return render_template('home.html')
 
 

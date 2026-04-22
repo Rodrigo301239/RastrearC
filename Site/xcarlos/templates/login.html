@@ -334,9 +334,9 @@
         <div class="login-box">
           <h3>🤡 Criar conta</h3>
 
-          <input type="text" name="name" placeholder="Nome completo" required>
+          <input type="text" name="nome" placeholder="Nome completo" required>
           <input type="email" name="email" placeholder="seu@email.com" required>
-          <input type="password" name="password" placeholder="Crie uma senha" required>
+          <input type="password" name="senha" placeholder="Crie uma senha" required>
 
           <button type="submit">😤 Cadastrar</button>
 
@@ -376,12 +376,11 @@
 
     // Clicar no link de voltar para login remove o hash
     document.querySelectorAll('.toggle-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        if (this.getAttribute('href') === '#') {
-          e.preventDefault();
-          window.location.hash = '';
-          location.reload();
-        }
+  link.addEventListener('click', function(e) {
+    if (this.getAttribute('href') === '#') {
+      e.preventDefault();
+      window.location.hash = '';
+    }
       });
     });
   </script>
